@@ -32,7 +32,8 @@ for my $Timestamp ( @{$data} ) {
     for my $emails ( keys %{ $Timestamp } ) {
 
 #        print "$emails -> $Timestamp->{$emails}->{CreateTimestamp}\n";
-        $self->creates_file( "$emails", "$Timestamp->{$emails}->{CreateTimestamp}", "$dst_file" ) if ( $Timestamp->{$emails}->{CreateTimestamp} =~ m/^201501/gi );
+        $self->creates_file( "$emails", "$Timestamp->{$emails}->{CreateTimestamp}", "$dst_file" ) 
+            if ( $Timestamp->{$emails}->{CreateTimestamp} =~ m/^201501/gi );
 
     }
 
