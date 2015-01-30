@@ -65,13 +65,13 @@ sub creates_file {
 
     if ( -e "$self->{_directory}" ) {
         open CREATE, ">>", "$self->{_directory}/zimbra-created.txt" or die "Não foi possível criar o arquivo\n";
-        print CREATE "$self->{_email}: $self->{_CreateTimestamp}\n";
+        print CREATE "\"$self->{_email}\",\"$self->{_CreateTimestamp}\"\n";
         close CREATE;
     }
     else {
         mkdir "$self->{_directory}";
         open CREATE, ">>", "$self->{_directory}/zimbra-created.txt" or die "Não foi possível criar o arquivo\n";
-        print CREATE "$self->{_email}: $self->{_CreateTimestamp}\n";
+        print CREATE "\"$self->{_email}\",\"$self->{_CreateTimestamp}\"\n";
         close CREATE;
     }
 
